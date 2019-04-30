@@ -1,0 +1,66 @@
+// EXAMPLE USAGE
+
+int b0 = 0;
+int b1 =0;
+int b2 = 0;
+int b3 =0;
+int b4 =0;
+int b5 =0;
+int b6 =0;
+int b7 =0;
+int v1=0;
+double temp= 0;
+char *message = "my name is particle";
+String aString;
+
+
+void setup()
+{
+  Particle.variable("b0", b0);
+    Particle.variable("b1", b1);
+      Particle.variable("b2", b2);
+        Particle.variable("b3", b3);
+          Particle.variable("b4", b4); 
+            Particle.variable("b5", b5);
+              Particle.variable("b6", b6);
+                Particle.variable("b7", b7);
+            
+          
+  Particle.variable("temp", temp);
+  if (Particle.variable("mess", message)==false)
+  {
+      // variable not registered!
+  }
+  Particle.variable("mess2", aString);
+
+  pinMode(D0, INPUT);
+  pinMode(D1, INPUT);
+   pinMode(D2, INPUT);
+    pinMode(D3, INPUT);
+     pinMode(D4, INPUT);
+      pinMode(D5, INPUT);
+      pinMode(D6, INPUT);
+       pinMode(D7, INPUT);
+        
+}
+
+void loop()
+{
+  // Read the analog value of the sensor (TMP36)
+  b0= digitalRead(D0);
+  b1= digitalRead(D1);
+  b2= digitalRead(D2);
+  b3= digitalRead(D3);
+  b4= digitalRead(D4);
+  b5= digitalRead(D5);
+  b6= digitalRead(D6);
+  b7= digitalRead(D7);
+
+  //Convert the reading into degree celcius
+  temp = (b0*8+b1*4+b2*2+b3)*10 + (b4*8+b5*4+b6*2+b7);
+  delay(200);
+
+}
+
+
+
