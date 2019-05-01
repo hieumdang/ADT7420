@@ -12,6 +12,7 @@ Current data seems to work, known issue is it increases/ decreases by +/- 2 Cels
 Future work will fix this issue.
 */
 
+
 module tempF( 
 
 input clk,
@@ -33,7 +34,8 @@ output reg [3:0] ones
 
     reg [3:0] decimal;
 
-    reg [3:0] digitPos
+    reg [3:0] digitPos;
+    
 parameter AN0=  8'b11111110;
 
 parameter AN1=  8'b11111101;
@@ -61,7 +63,7 @@ begin
     case (tempC[7:0])
     
 //0 -10c
-        F = 1.8*C +32   // temp in sensor might not be correct
+//        F = 1.8*C +32   // temp in sensor might not be correct
 8'b00000000    :    begin hundreds <= 4'b0000; tens <= 4'b0011; ones <= 4'b0010; end      //0 C =032 F
         
 8'b00000001    :    begin hundreds <= 4'b0000; tens <= 4'b0011; ones <= 4'b0011; decimal <= 4'b0100 ;end      //1 C =033.8 F
