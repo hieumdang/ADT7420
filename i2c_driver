@@ -20,6 +20,8 @@ output [7:0] dig;
 output [6:0] seg; 
 inout  sda;		
 output [15:0] data;	
+output [4:0] tens;
+output [4:0] ones;
 
 
 //--------------------------------------------
